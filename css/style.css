@@ -702,6 +702,10 @@ header{
 	width:50%;
 }
 
+.col-1 p{
+	text-align:left;	
+}
+
 .photo{
 	margin: 10px auto 10px auto;
 }
