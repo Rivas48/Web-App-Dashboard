@@ -85,10 +85,10 @@
 		</div>
 		<ul class="nav">
 					<li class="nav--btn traffic">Traffic</li>
-					<li class="nav--btn selected">Hourly</li>
-					<li class="nav--btn selected">Daily</li>
-					<li class="nav--btn selected">Weekly</li>
-					<li class="nav--btn selected last-style">Monthly</li>
+					<button id='hourly' class="nav--btn selected">Hourly</button>
+					<button id='daily' class="nav--btn selected">Daily</button>
+					<button id='weekly' class="nav--btn selected">Weekly</button>
+					<button id='monthly' class="nav--btn selected last-style">Monthly</button>
 			</ul>
 		<div class="graph">
 		<div class="graph1">	
@@ -101,7 +101,7 @@
 		<div class="graph2">
 		<h3 class="graph-title">Daily Traffic</h3>
 			<div class="myChart">
-				<canvas id="myChart" >		
+				<canvas id="myChart">		
 				</canvas>	
 			</div>
 		</div>
@@ -393,6 +393,7 @@
 </div>
 
 <script src="js/donutChart.js"></script>
+<script src="js/changeGraphs.js"></script>
 </body>
 
 </html>

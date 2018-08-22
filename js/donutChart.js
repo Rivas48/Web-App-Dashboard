@@ -1,4 +1,6 @@
-   /*BARCHART DATA*/
+
+
+/*BARCHART DATA*/
 var atx = document.getElementById("myChart");
 var myChart = new Chart(atx, {
     type: 'bar',
@@ -6,7 +8,7 @@ var myChart = new Chart(atx, {
         labels: ["S", "M", "T", "W", "T", "F", "S"],
         datasets: [{
             label: '',
-            data: [150, 200, 175, 225, 125, 260, 100],
+            data: [160, 200, 175, 255, 185, 290, 100],
             backgroundColor: [
                 '#7070cc',
                 '#7070cc',
@@ -116,6 +118,7 @@ var myChart = new Chart(atx, {
 
 
 //Selecting Icons 
+
 var menu      = document.getElementById('menu');
 var members   = document.getElementById('member');
 var dashboard = document.getElementById('dashboards');
@@ -208,5 +211,8 @@ function closed(){
     element.removeChild(take);
     element.removeChild(taken);
 }
+
+
+
 
 
