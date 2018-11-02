@@ -13,22 +13,10 @@ var trafficButton = document.getElementsByClassName('nav--btn');
 
    function addData(chart, label, fun) {
     chart.data.datasets[0].data = fun.slice(0);
-    console.log(chart.data.datasets[0].data);
     chart.update();
     };
 
-
-
-
-
-  //Clicking Function w/t Data 
-
-   addEvent(hourly,'click',hourlyData)
-   addEvent(daily,'click',dailyData)
-   addEvent(weekly,'click',weeklyData)
-   addEvent(monthly,'click',monthlyData)
-
-   //Data Assigned Based Of Time
+//Data Assigned Based Of Time
 
     function hourlyData(){
     var lame = [50, 200, 25, 255, 185, 290, 100];
@@ -66,14 +54,15 @@ var trafficButton = document.getElementsByClassName('nav--btn');
         addData(lineChart, '', line);   
    }
 
+//Clicking Function w/t Data 
 
- // Add Click Functions
+   addEvent(hourly,'click',hourlyData)
+   addEvent(daily,'click',dailyData)
+   addEvent(weekly,'click',weeklyData)
+   addEvent(monthly,'click',monthlyData)
    addEvent(trafficButton[1], 'onclick', hourlyData());
-
    addEvent(trafficButton[2], 'click', dailyData());
-
    addEvent(trafficButton[3], 'click', weeklyData());
-
    addEvent(trafficButton[4], 'click', monthlyData());
 
 

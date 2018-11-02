@@ -119,12 +119,24 @@ var myChart = new Chart(atx, {
 
 //Selecting Icons 
 
-var menu      = document.getElementById('menu');
-var members   = document.getElementById('member');
-var dashboard = document.getElementById('dashboards');
-var visits    = document.getElementById('visit');
-var settings  = document.getElementById('setting');
-var arrow     = document.getElementById('arrow');
+var menu      = document.getElementById('menu'),
+members   = document.getElementById('member'),
+dashboard = document.getElementById('dashboards'),
+visits    = document.getElementById('visit'),
+settings  = document.getElementById('setting'),
+arrow     = document.getElementById('arrow'),
+user            = document.getElementsByClassName('write')[0].value,
+write           = document.getElementsByClassName('write')[1].value,
+link            = document.getElementsByClassName('name'),
+warningMessage  = document.createElement("p"),
+nodeNoUser      = document.createTextNode("No User was selected"),
+nodeYes         = document.createTextNode("Message Sent To " + user),
+nodeNoMessage   = document.createTextNode("No Message was written"),
+element         = document.getElementById("pop_up"),
+button          = document.createElement("button"),
+nodeButton      = document.createTextNode("Close"),
+close           = document.getElementById('close'), 
+overlay         = document.getElementById('overlay');
 
 //Open Nav Menu
 
@@ -148,26 +160,9 @@ function closeMenu(){
     settings.className  = "none";
 }
 
-    var close           = document.getElementById('close'); 
-    var overlay         = document.getElementById('overlay');
 function myMessage() {
-    var user            = document.getElementsByClassName('write')[0].value;
-    var write           = document.getElementsByClassName('write')[1].value;
-    var link            = document.getElementsByClassName('name');
-    var warningMessage  = document.createElement("p");
-    var nodeNoUser      = document.createTextNode("No User was selected");
-    var nodeYes         = document.createTextNode("Message Sent To " + user);
-    var nodeNoMessage   = document.createTextNode("No Message was written")
-    var element         = document.getElementById("pop_up");
-    var button          = document.createElement("button");
-    var nodeButton      = document.createTextNode("Close")
-    
-    //if no user is put down
     if (user !== ""){
-       console.log('you wrote something in user bar good job genius');
-    //if no message is written down
-               if (write !== ""){
-                console.log('you wrote something in the message input good job genius');
+        if (write !== ""){
                 warningMessage.appendChild(nodeYes);
                 element.appendChild(warningMessage);
                 button.appendChild(nodeButton);
@@ -179,7 +174,6 @@ function myMessage() {
                 document.getElementById('warning').innerHTML="Success!";
                 document.getElementById('warning').style.background='#85db80';
                 } else {
-                    console.log('you got the message right again');
                     warningMessage.appendChild(nodeNoMessage);
                     element.appendChild(warningMessage);
                     element.appendChild(button);
@@ -190,8 +184,7 @@ function myMessage() {
                     overlay.style.display= 'block';
                     
                                }
-    } else{
-        console.log("you didnt write anything in the in the user box genius");
+    }else{
         warningMessage.appendChild(nodeNoUser);
         element.appendChild(warningMessage);
         element.appendChild(button);
@@ -200,8 +193,9 @@ function myMessage() {
         button.setAttribute("onclick", "closed()");
         warningMessage.setAttribute("id", "message");
         overlay.style.display= 'block';
-    }          
-}
+    }
+    }       
+
   //Closes Modal 
 function closed(){
     overlay.style.display = 'none';
